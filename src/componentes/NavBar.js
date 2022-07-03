@@ -1,5 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return(
@@ -25,6 +26,9 @@ function NavBar() {
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Contacto</a>
+                </li>
+                <li className="nav-item">
+                   <a className="nav-link"> <CartWidget/> </a> 
                 </li>
               </ul>
             </div>
