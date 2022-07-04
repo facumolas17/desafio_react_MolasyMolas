@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <ItemListenContainer saludo="hola mundo"/>
+      <ItemListenContainer nombre="Pedro" edad={28}/>
+      <ItemListenContainer nombre="Juan" edad={32}/>
     </div>
   );
 }

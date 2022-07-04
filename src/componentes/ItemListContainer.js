@@ -1,8 +1,9 @@
 import React from "react";
 
-const ItemListenContainer= ({saludo})=>{
+const ItemListenContainer= (props)=>{
   return(
-    <h3>{saludo}</h3>
+    <h3>Hola, soy {props.nombre} tengo {props.edad}</h3>
+    
   );
 }
 
