@@ -1,9 +1,10 @@
 import React from "react";
+import ItemCount from "./ItemCount";
 
-const ItemListenContainer= (props)=>{
+export const ItemListenContainer= (props)=>{
+  
   return(
-    <h3>Hola, soy {props.nombre} tengo {props.edad}</h3>
-    
+    <ItemCount initial={1} stock={20}/>
   );
 }
 
