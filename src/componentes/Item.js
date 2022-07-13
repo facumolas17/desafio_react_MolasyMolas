@@ -1,0 +1,1 @@
+/*Componente que usaremos más adelante*/
