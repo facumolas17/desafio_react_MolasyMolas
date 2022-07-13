@@ -1,26 +1,15 @@
-import { toBeEnabled } from "@testing-library/jest-dom/dist/matchers";
+import React from 'react';
+import Item from './Item';
+import ItemListenContainer from './ItemListContainer';
 
-
-console.log(productos);
-
-let ban=true;
-           
-let productos=[{nombre:"Tabla para 2", id:"1",precio:"1200"},{nombre:"Tabla para 4", id:"2",precio:"2000"},
-{nombre:"Tabla para 6", id:"3",precio:"2800"}];
-
-
-let encontrarProducto=(tiempo,pedido)=>{
-    return new Promise((resolve,reject)=>{
-        if(ban){
-            setTimeout(()=>{
-                resolve(pedido)
-            },tiempo)
-        }else{
-            reject("Error") 
-        }
-    });
+const ItemList=( {items} )=> {
+  return (
+    <>
+    {
+     items.map( item => < Item key={item.id} product={item }/> )
+    }
+    </>
+  )
 }
 
-encontrarProducto(2000,productos)
-    .then(datos=>{console.log(datos)})
-    .catch(error=>console.log(error))
+export default ItemList;
