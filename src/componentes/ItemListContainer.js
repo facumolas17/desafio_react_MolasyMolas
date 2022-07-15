@@ -22,7 +22,12 @@ const productos=[{
 
 export const ItemListenContainer= (props)=>{
 
+  const onAdd=(quantity)=>{
+    console.log(`Se agregaron al carrito ${quantity} unidades`);
+}
   const [productList,setProductList]=([productos]);
+
+  
 
   const myPromise= new Promise((resolve,reject)=>{
     setTimeout(()=>{
@@ -38,7 +43,7 @@ export const ItemListenContainer= (props)=>{
   return(
     <>
 
-    <ItemCount initial={1} stock={20}/>
+    <ItemCount initial={1} stock={10} onAdd={onAdd}/>
     <ItemList items={productList}/>
     
     </>

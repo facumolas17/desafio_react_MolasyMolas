@@ -1,6 +1,7 @@
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,body{
@@ -21,3 +22,8 @@ html,body{
     transition: .6s all;
 }
 
+.counter{
+    background-color: antiquewhite;
+    padding: 20px;
+    
+}

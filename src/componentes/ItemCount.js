@@ -1,34 +1,35 @@
 import React, {useState} from 'react';
+import '../estilos/ItemCount.css';
+import ItemListenContainer from './ItemListContainer';
 
-const ItemCount=({initial,stock})=>{
+
+const ItemCount=({initial,stock,onAdd})=>{
     const [counter,setCounter]= useState(initial)
     const agregar=()=>{
         if (counter<stock){
-            const aux=counter+1;
-            setCounter(aux);
+            setCounter(counter+1);
         }
     }
     const quitar=()=>{
         if(counter>initial){
-            const aux=counter-1;
-            setCounter(aux);
+            setCounter(counter-1);
         }
    
     }
     
-    const onAdd=()=>{
-        console.log(`Se agregaron al carrito ${counter} del producto`);
-    }
     
     return (
-        <div>
+        
+        <div className='counter'>
+            
+            <button disabled={counter <= 1} onClick={quitar}>-</button>
+            <span>{counter}</span>
+            <button disabled={counter>=stock} onClick={agregar}>+</button>
             <div>
-                <button onClick={quitar}>-</button>
-                <p>{counter}</p>
-                <button onClick={agregar}>+</button>
+                <button disabled={stock<=0} onClick={ () => onAdd(counter)} >Agregar al carrito</button>
             </div>
-            <button onClick={onAdd} >Agregar al carrito</button>
         </div>
+        
     )
 }
 
