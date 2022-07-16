@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../estilos/ItemCount.css';
 import ItemListenContainer from './ItemListContainer';
 
 
